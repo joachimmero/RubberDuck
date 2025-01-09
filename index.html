@@ -9,5 +9,10 @@
   </head>
   <body>
     <script src="index.js"></script>
+    <div>9.1.2025</div>
+    <div>I was tasked today at work to implement a change in design in one critical game-system in our game. At first I thought I would've gone in and modify the existing systems to support the new requirements, but after thinking about it a little bit I decided not to. I remembered that a couple of months ago that same game-system was just modified, due to a similar change in it's feature's requirements. Now I was tasked to basically revert those changes.
+    	I thought that what I would do instead would be to implement the change in a modular fashion, where I wouldn't lose the existing code and its integration-details. I extracted the existing system into a component and hid it behind an abstraction. After that I implemented the change as a separate component, following the same abstraction, and swapped it in the place of the current one.
+    	This kind of refactor-first kind-of change makes a lot of sense, because I made the system extensible in the place that I witnessed being changed regularly, but when would this approach not be viable? That's something I'd like to discuss with some one.
+	If you're interested, you can reach out to me at developer.madeforme@gmail.com</div>
   </body>
 </html>
