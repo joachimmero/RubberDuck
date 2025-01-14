@@ -9,6 +9,13 @@
   </head>
   <body>
     <script src="index.js"></script>
+    <div>14.1.2025</div>
+    <div>How to know what is a business-rule is and what isn't?
+    I'm currently extending our game and I'm facing an interesting problem: I need to figure out whether the I should extend a business-rule or implement the change in some other way.
+    	I first started changing the business-rule. I stated that the existing rule is only true when the game is in a specific state (I added an early exit). Soon after, though, after showing the change to our UX-designer, I noticed that the change didn't quite result in what I was expecting. In turned out that the states of our game are less granular than I originally thought.
+    What I then did was, yet again, go back to change the business-rule. I stopped, because that didn't feel quite right. I realized that the rule I was meaning to add would've been very presentation-specific: "the business-rule is only true when in this or that state _and_ when state is in this sub-state", and that sub-state even existing is very much a detail of the presentation, and could as well not be there. .Yeah not doing that.
+    So in this very specific case the "when should I apply this business-rule" is a presentational concern, not a business-rule, and so it shouldn't be applied in the business-rules, but rather somewhere in the presentation-layer.
+    For some reason I didn't realize that first, but it would be beneficial to build that muscle. I'm not sure how though. What are the things that distinct a business-rule from a presentational concern? Maybe the "when should I show" is one. Thoughts?</div>
     <div>9.1.2025</div>
     <div>I was tasked today at work to implement a change in design in one critical game-system in our game. At first I thought I would've gone in and modify the existing systems to support the new requirements, but after thinking about it a little bit I decided not to. I remembered that a couple of months ago that same game-system was just modified, due to a similar change in it's feature's requirements. Now I was tasked to basically revert those changes.
     	I thought that what I would do instead would be to implement the change in a modular fashion, where I wouldn't lose the existing code and its integration-details. I extracted the existing system into a component and hid it behind an abstraction. After that I implemented the change as a separate component, following the same abstraction, and swapped it in the place of the current one.
