@@ -55,18 +55,48 @@
     </p>
   </hgroup>
   <p>
+  <p>
+    Being certain about the changes I make in code is very important to me. That’s reflected in the way I work, from writing simple and easily reasonable code to structuring commits in a clear way to have visibility on what I have changed. This way of working is deeply rooted in me and I benefit from it greatly.
+  </p>
+  <p>
+    However, that mentality causes issues when using AI for coding. I have been wondering why I get the feeling that something’s off when asking AI to solve some problems. This is the reason. I know deep inside that I’m entering a dangerous territory. I know I’m sacrificing understanding for speed. It’s simply impossible for me to reach the same level of understanding, and with that confidence, of a problem or the solution when using AI. Not even if I read all of the code it generates. I have to play with code to gain it.
+  </p>
+  <p>
+    This doesn’t mean that I wouldn’t use AI for anything, but it does give me a better sense of the problems to use it for. Problems that I have already solved a million times, or problems I already know the exact solution to, I will use AI to solve. I will use it as a super-powered auto-completion. However, I will not ask it to write new code or to fix an issue that I don’t yet understand.
+  </p>
+  <p>
+    It’s clear that with AI we’ve entered a new realm to learn to live in.
+  </p>
+</div>
+<div>
+  <hgroup>
+    <h1>
+      Extension-Methods and Flat Code
+    </h1>
     <p>
-      Being certain about the changes I make in code is very important to me. That’s reflected in the way I work, from writing simple and easily reasonable code to structuring commits in a clear way to have visibility on what I have changed. This way of working is deeply rooted in me and I benefit from it greatly.
+      21.1.2026
     </p>
-    <p>
-      However, that mentality causes issues when using AI for coding. I have been wondering why I get the feeling that something’s off when asking AI to solve some problems. This is the reason. I know deep inside that I’m entering a dangerous territory. I know I’m sacrificing understanding for speed. It’s simply impossible for me to reach the same level of understanding, and with that confidence, of a problem or the solution when using AI. Not even if I read all of the code it generates. I have to play with code to gain it.
-    </p>
-    <p>
-      This doesn’t mean that I wouldn’t use AI for anything, but it does give me a better sense of the problems to use it for. Problems that I have already solved a million times, or problems I already know the exact solution to, I will use AI to solve. I will use it as a super-powered auto-completion. However, I will not ask it to write new code or to fix an issue that I don’t yet understand.
-    </p>
-    <p>
-      It’s clear that with AI we’ve entered a new realm to learn to live in.
-    </p>
+  </hgroup>
+  <p>
+  <p>
+  I worked on a team using object-oriented programming a few years ago. We had a convention of implementing our business-logic as rich objects. Sometimes those objects got really deep. Sometimes they had a hierarchy of close to ten levels deep, containing sub-models within sub-models within sub-models. Figure 1 has an example of one such object.
+  </p>
+  <figure>
+    <img src="img/extension-methods-and-flat-code-figure-1.png" alt="Figure 1 Object with deep hierarchy."></img>
+    <figcaption>Figure 1 Object with deep hierarchy.</figcaption>
+  </figure>
+  <p>
+    Those objects were a nightmare to understand and maintain, since business-logic was scattered all around the different levels of hierarchy. In addition to making the code harder to read (because of all the jumping around required), it essentially locked the hierarchy of the code into a specific form, which was hard to change when new requirements came in.
+  </p>
+  <p>
+    In another project I worked on later, we had a different convention. We didn’t have rich objects. Data was kept in really barebones objects without any logic in them. Our business-logic was then implemented elsewhere, outside the classes. One of such places was extension-methods
+  </p>
+  <p>
+    I never really understood the difference in using extension-methods vs methods of a class, but now I found extension-methods to have great benefits in keeping code shallow.
+  </p>
+  <p>
+    Since extension-methods don’t have access to the internals of the classes they’re extending, it’s impossible to create deep hierarchies within them like rich objects. Therefore, extension-methods, when written correctly, can be used as a guiding force in keeping code shallow. What do you think about this?
+  </p>
 </div>
 <address>
   Contact me at <a href="mailto:developer.madeforme@gmail.com">developer.madeforme@gmail.com</a>
